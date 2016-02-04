@@ -1,0 +1,13 @@
+body {
+	width: 300px;
+}
+
+.titles {
+	font-weight: bold;
+	font-size: 14px;
+	/*border: 2px solid black;*/
+}
+
+.movie-container {
+	/*border: 2px solid black;*/
+}
