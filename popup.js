@@ -18,7 +18,7 @@ request.onreadystatechange = function () {
 		for (var i = 0; i < resultsArr.length; i ++) {
 			var title = '<div class="titles"><br>' + resultsArr[i].title + '</div>';
 			var image = '<img src="https://image.tmdb.org/t/p/w185' + resultsArr[i].poster_path + "'>";
-			var overview = '<div class="overview">' + resultsArr[i].overview + '</div>';
+			var overview = '<div class="overview"><center>' + resultsArr[i].overview + '</div>';
 
 			var together = "<div class='movie-container'><center>" + image + title + overview + "</div>";
 			titlesStr += together;

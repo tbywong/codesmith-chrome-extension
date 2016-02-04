@@ -1,13 +1,15 @@
 body {
 	width: 300px;
+	background: gray;
+	color: white;
 }
 
-.titles {
+.main-container {
 	font-weight: bold;
-	font-size: 14px;
-	/*border: 2px solid black;*/
+	font-size: 18px;
 }
 
 .movie-container {
-	/*border: 2px solid black;*/
+	font-weight: bold;
+	font-size: 18px;
 }
