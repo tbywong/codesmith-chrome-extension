@@ -27,8 +27,7 @@ function compiler(data, index) {
 
 	var $images = $('<div class="imgWrap"><img src="' + data.image[index] + '"><div class="hoverText"><span>Watch Trailer</span></div></div>');
 
-	// var $images = $(document.createElement('img'));
-	// $images.attr('src', data.image[index]);
+
 	$images.click(function(){
 		var search = data.title[index].replace(/ /g, "+");
 		window.open('http://www.youtube.com/results?search_query=' + search + '+trailer');
@@ -42,9 +41,7 @@ function compiler(data, index) {
 
 }
 
-
-
-// --------- GET request begins here
+// --------- GET request
 request.open('GET', 'http://api.themoviedb.org/3/movie/now_playing?api_key=0fdbb8fb91fc7d7557228fd3d1fcaa52');
 
 request.setRequestHeader('Accept', 'application/json');
@@ -54,22 +51,9 @@ request.onreadystatechange = function () {
 	if (this.readyState === 4) {
 		var data = JSON.parse(this.responseText);
 		var resultsArr = data.results;
-		// var titlesStr = "";
-
 		var dataObj = getDataObj(resultsArr);
-		console.log(dataObj);
 
-
-		// for (var i = 0; i < resultsArr.length; i ++) {
-		// 	var title = '<div class="titles"><br>' + resultsArr[i].title + '</div>';
-		// 	var image = '<img src="https://image.tmdb.org/t/p/w185' + resultsArr[i].poster_path + "'>";
-		// 	var overview = '<div class="overview"><center>' + resultsArr[i].overview + '</div>';
-		//
-		// 	var together = "<div class='movie-container'><center>" + image + title + overview + "</div>";
-		// 	titlesStr += together;
-		// }
-
-	// --------- jQuery begins here
+// --------- jQuery
 		$(document).ready(function(){
 
 			for (var i = 0; i < dataObj.title.length; i++) {
@@ -77,9 +61,6 @@ request.onreadystatechange = function () {
 				console.log(dataObj.title[i]);
 			}
 
-
-			// var $titles = $(`<div class="main-container"'${titlesStr}</div>`);
-			// $( "body" ).append( $titles );
 		});
 	}
 
