@@ -29,7 +29,7 @@ function compiler (data, index) {
 
   $images.click(() => {
     const search = data.title[index].replace(/ /g, '+')
-    window.open(`http://www.youtube.com/results?search_query=${search}trailer`)
+    window.open(`http://www.youtube.com/results?search_query=${search}+trailer`)
   })
 
   $('body').append($movieWrapper)
